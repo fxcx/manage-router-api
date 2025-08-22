@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+// import { Suspense } from 'react'
 import './global.css'
 
 export const metadata = {
@@ -32,20 +32,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="layout">
       
-        <header>
+        <header className='header'>
           <h1 className="bg-red text-3xl">Next.js Application</h1>
         </header>
+        <div className="layout">
+
+        <main className='main'>
         {children}
-        <Suspense fallback={<p>Loading...</p>}>
+
+        </main>
+        {/* <Suspense fallback={<p>Loading...</p>}>
           <main className="container mx-auto p-4">
           <img src="https://wallpaperaccess.com/full/8359972.jpg"></img>
           </main>
-         </Suspense>
-        <footer>
+          </Suspense> */}
+        <footer className='footer'>
           <p>© 2023 Next.js App</p>
         </footer>
+        </div>
         </body>
     </html>
   )
